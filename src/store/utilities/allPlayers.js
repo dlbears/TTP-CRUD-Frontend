@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { URL_ROOT } from '../../constants'
 
 // ACTION TYPES;
 const FETCH_ALL_PLAYERS = "FETCH_ALL_PLAYERS";
@@ -14,7 +15,7 @@ const fetchAllPlayers = players => {
 // THUNK CREATORS;
 export const fetchAllPlayersThunk = () => dispatch => {
   return axios
-    .get('/api/players')
+    .get(`${URL_ROOT}/api/players`)
     .then(res => res.data)
     .then(players => dispatch(fetchAllPlayers(players)))
     .catch(err => console.log(err))
