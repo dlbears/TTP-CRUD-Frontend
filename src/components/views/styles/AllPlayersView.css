@@ -1,3 +1,45 @@
 .all-players {
   color: red;
 }
+
+.data{
+  font-family: 'Helvetica';
+  font-size: 40px;
+  border-radius: 10px;
+  border: 10px ridge aqua;
+  color:black;
+  background-color: blanchedalmond;
+  height: 630px;
+  text-align: left;
+}
+
+.StuImage{
+  margin-top: 80px;
+}
+
+.Student{
+font-size: 10px;
+background-image: url();
+width: 200px;
+border: 10px ridge aqua;
+border-radius: 15px;
+text-align: center;
+margin-top: 20px;
+margin-bottom: 20px;
+color: yellow
+}
+.campus{
+  text-align:left;
+  margin-left: 10px;
+}
+
+.Campus{
+background-image: url();
+width: 225px;
+border: 10px ridge aqua;
+border-radius: 15px;
+text-align: center;
+margin-top: 30px;
+margin-bottom: 30px;
+color: yellow
+}

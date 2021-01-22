@@ -3,12 +3,12 @@
 }
 
 .app-header {
-  background-color: #282c34;
+  background-image: url(https://www.cuny.edu/wp-content/uploads/sites/4/media-assets/skyline-1200x627_CUNY_Logo.jpg);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: start;
   font-size: calc(10px + 2vmin);
   color: white;
 }

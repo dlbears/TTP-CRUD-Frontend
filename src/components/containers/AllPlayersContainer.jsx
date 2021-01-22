@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchAllPlayersThunk } from '../../thunks';
 import { AllPlayersView } from '../views';
+import { CampusView } from '../views';
+import { SingleStudent } from '../views';
+import { StudentView } from '../views';
 
 // Smart container;
 class AllPlayersContainer extends Component {
@@ -11,7 +14,7 @@ class AllPlayersContainer extends Component {
   }
 
   render() {
-    return <AllPlayersView allPlayers={this.props.allPlayers} />
+    return <StudentView />
   }
 }
 
