@@ -14,7 +14,7 @@ class AllPlayersContainer extends Component {
   }
 
   render() {
-    return <StudentView />
+    return <CampusView />
   }
 }
 

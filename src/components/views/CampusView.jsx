@@ -9,10 +9,33 @@ const CampusView = props => {
   return (
     <div className="campus">
       {campuses.map(player => (
+        <div>
         <div key={player.id} className="Campus">
-          <h1>{player.name}</h1>
+          <div className='campustext'><h1>{player.name}</h1></div>
+        <div className='buttonspace'>
+        <button type='button' class="Button">Delete</button>
+        </div>
+        </div>
+        
         </div>
       ))}
+      <div className='noCampus'>
+          <p>There are no campuses to view.<br/>
+          Click "Add Campus" to add a campus</p>
+      </div>
+      <div className='bs2'>
+        <div className='bs3'>
+      <button type='button' class="Button2">Add Campus</button>
+      </div>
+       {//<form>
+         //<label for='Name'>Name:</label>
+         //<input type= 'text' id='Name' name='Name' value=''/><br></br>
+         //<label for='Address'>Address:</label>
+         //<input type= 'text' id='Address' name='Address' value=''/><br></br>
+         //<input type= 'submit' class="Button" value="Submit"/>
+       //</form>
+}
+      </div>
     </div>
   );
 };
