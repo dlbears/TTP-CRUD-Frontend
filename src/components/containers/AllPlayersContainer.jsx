@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchAllPlayersThunk } from '../../thunks';
-import { AllPlayersView } from '../views';
+import { AllPlayersView, SingleCampus } from '../views';
 import { CampusView } from '../views';
 import { SingleStudent } from '../views';
 import { StudentView } from '../views';

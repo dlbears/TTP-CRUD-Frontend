@@ -9,7 +9,7 @@ const SingleStudent= props => {
   return (
     <div className="data">
       <body>
-      Name: {StudentData.Name}<br/>Email: {StudentData.email}<br/>Campus: {StudentData.campus}<br/>GPA: {StudentData.GPA}<br/><div className='StuImage'><img src={StudentData.image} alt=''/></div>
+      Name: {StudentData.Name}<br/>Email: {StudentData.email}<br/>Campus: {StudentData.campus}<br/>GPA: {StudentData.GPA}<br/><img src={StudentData.image} alt='' className='stuImage'/>
       </body>
     </div>
   );

@@ -13,8 +13,13 @@
   text-align: left;
 }
 
-.StuImage{
-  margin-top: 80px;
+.CImage{
+  margin-top: 53px;
+  height: 400px;
+}
+.stuImage{
+  margin-top: 43px;
+  height: 400px;
 }
 
 .Student{
@@ -29,7 +34,13 @@ margin-top: 20px;
 margin-bottom: 20px;
 color: yellow
 }
-
+.stuList{
+margin-left: 1150px;
+margin-top: -650px;
+font-family: 'Cambria';
+color:tomato;
+font-style: italic;
+}
 .bs4{
   margin-top: -30px;
   margin-left: -25px;
