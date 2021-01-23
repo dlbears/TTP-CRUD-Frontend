@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux';
 import { fetchAllCampusesThunk, fetchCampusThunk, createCampusThunk, updateCampusThunk, deleteCampusThunk } from '../../thunks/index'
 
@@ -14,7 +14,9 @@ const CampusContainer = ({
 }) => {
 
     useEffect(() => {
-        console.log('fetchAll ', fetchAllCampuses)
+        fetchAllCampuses()
+        deleteCampus(1)
+        fetchAllCampuses()
     }, [])
 
     return <AllPlayersView allPlayers={campuses.map(({ name, id }) => ({ firstname: name, id }))} />
@@ -26,8 +28,8 @@ const mapState = ({ campuses }) => ({ campuses })
 const mapDispatch = dispatch => ({
     fetchAllCampuses: () => dispatch(fetchAllCampusesThunk()),
     fetchCampus: id => dispatch(fetchCampusThunk(id)),
-    createCampus: data => dispatch(createCampusThunk(data)),
-    updateCampus: data => dispatch(updateCampusThunk(data)),
+    createCampus: (name, address, description, imageUrl) => dispatch(createCampusThunk({ name, address, description, imageUrl })),
+    updateCampus: (name, address, description, imageUrl) => dispatch(updateCampusThunk({ name, address, description, imageUrl })), //TODO: need to update based on id
     deleteCampus: id => dispatch(deleteCampusThunk(id))
 })
 

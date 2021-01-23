@@ -17,7 +17,7 @@ export const fetchAllStudentsThunk = () => dispatch => {
   return axios
     .get(`${URL_ROOT}/routes/studentAll`)
     .then(res => res.data)
-    .then(students => dispatch(fetchAllStudents(students)))
+    .then(({ student }) => dispatch(fetchAllStudents(student)))
     .catch(err => console.log(err))
 }
 

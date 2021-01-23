@@ -16,9 +16,9 @@ const fetchStudent = id => {
 export const fetchStudentThunk = id => dispatch => {
   return axios
     .get(`${URL_ROOT}/routes/studentOne/${id}`)
-    .then(res => res.status)
-    .then(status => {
-       if (200 <= status && status < 300) dispatch(fetchStudent(id))
+    .then(({ status, data }) => ({ status, data }))
+    .then(({ status, data: { student } }) => {
+       if (200 <= status && status < 300) dispatch(fetchStudent(student))
        else throw new Error("Error fetching student")
     })
     .catch(err => console.log(err))
