@@ -29,7 +29,7 @@ const mapDispatch = dispatch => ({
     fetchAllCampuses: () => dispatch(fetchAllCampusesThunk()),
     fetchCampus: id => dispatch(fetchCampusThunk(id)),
     createCampus: (name, address, description, imageUrl) => dispatch(createCampusThunk({ name, address, description, imageUrl })),
-    updateCampus: (name, address, description, imageUrl) => dispatch(updateCampusThunk({ name, address, description, imageUrl })), //TODO: need to update based on id
+    updateCampus: (id, name, address, description, imageUrl) => dispatch(updateCampusThunk(id, { name, address, description, imageUrl })), //TODO: need to update based on id
     deleteCampus: id => dispatch(deleteCampusThunk(id))
 })
 

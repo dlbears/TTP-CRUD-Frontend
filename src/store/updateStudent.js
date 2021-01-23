@@ -13,12 +13,12 @@ const updateStudent = studentData => {
 }
 
 // THUNK CREATORS;
-export const updateStudentThunk = studentData => dispatch => {
+export const updateStudentThunk = (id, studentData) => dispatch => {
   return axios
-    .put(`${URL_ROOT}/api/student`, { studentData })
-    .then(res => res.status)
-    .then(status => {
-       if (200 <= status && status < 300) dispatch(updateStudent(studentData))
+    .put(`${URL_ROOT}/routes/studentUpdate/${id}`, { studentData })
+    .then(({ status, data }) => ({ status, data }))
+    .then(({ status, data: { student } }) => {
+       if (200 <= status && status < 300) dispatch(updateStudent(student))
        else throw new Error("Error updating student")
     })
     .catch(err => console.log(err))
