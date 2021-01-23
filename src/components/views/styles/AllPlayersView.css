@@ -1,3 +1,130 @@
 .all-players {
   color: red;
 }
+
+.data{
+  font-family: 'Helvetica';
+  font-size: 40px;
+  border-radius: 10px;
+  border: 10px ridge aqua;
+  color:black;
+  background-color: blanchedalmond;
+  height: 630px;
+  text-align: left;
+}
+
+.CImage{
+  margin-top: 53px;
+  height: 400px;
+}
+.stuImage{
+  margin-top: 43px;
+  height: 400px;
+}
+
+.Student{
+font-size: 10px;
+background-image: url();
+width: 200px;
+height: 40px;
+border: 10px ridge aqua;
+border-radius: 15px;
+text-align: center;
+margin-top: 20px;
+margin-bottom: 20px;
+color: yellow
+}
+.stuList{
+margin-left: 1150px;
+margin-top: -650px;
+font-family: 'Cambria';
+color:tomato;
+font-style: italic;
+}
+.bs4{
+  margin-top: -30px;
+  margin-left: -25px;
+}
+.Button{
+ margin-left: 250px;
+ margin-top: -80px;
+ background-color: blueviolet;
+ font-size: 20px;
+ width: 75px;
+ height:30px;
+ text-align: center;
+ color:rgb(207, 133, 35);
+ border-radius: 6px;
+}
+.Button2{
+  text-align: center;
+  background-color: blueviolet;
+  font-size: 20px;
+  width: 150px;
+  height: 75px;
+  color:rgb(207, 133, 35);
+  border-radius: 6px;
+  margin-left: 195px;
+  margin-top: 80px;
+}
+.bs2{
+  margin-right: 80px;
+  margin-top: -650px;
+  text-align: right;
+}
+.bs3{
+  height:50px;
+  width: 75px;
+  margin-bottom: 20px;
+  margin-left: 1000px;
+}
+.bs5{
+  margin-right: 80px;
+  margin-top: -350px;
+  text-align: right;
+}
+.bs6{
+  height: 50px;
+  width: 75px;
+  margin-bottom: 20px;
+  margin-left: 1005px;
+}
+.buttonspace{
+  height:30px;
+  width: 75px;
+  margin-top: -80px;
+}
+.campus{
+  text-align:left;
+  margin-left: 10px;
+}
+.campustext{
+  margin-top:-15px;
+}
+.studenttext{
+  margin-top:-5px;
+}
+.Campus{
+background-image: url();
+width: 225px;
+height: 100px;
+border: 10px ridge aqua;
+border-radius: 15px;
+text-align: center;
+margin-top: 30px;
+margin-bottom: 30px;
+color: yellow
+}
+.noStudent{
+  color:yellow;
+  font-family: Helvetica;
+  font-style: italic;
+  text-align: left;
+}
+
+.noCampus{
+  color:yellow;
+  font-family: Helvetica;
+  font-style: italic;
+  text-align: left;
+}

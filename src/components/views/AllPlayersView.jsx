@@ -3,6 +3,7 @@ import './styles/AllPlayersView.css';
 import PropTypes from 'prop-types';
 
 const AllPlayersView = props => {
+ console.log(props.allPlayers)
   return (
     <div className="all-players">
       {props.allPlayers.map(player => (
