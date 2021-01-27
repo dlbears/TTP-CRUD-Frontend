@@ -1,0 +1,43 @@
+.Student{
+    background-color: #3D63A1;
+    /*width: 225px;*/
+    height: auto;
+    width: fit-content;
+    border: 10px ridge aqua;
+    border-radius: 15px;
+    text-align: center;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*margin-top: 30px;
+    margin-bottom: 30px; */
+    color: yellow
+}
+
+.studenttext{
+    margin: 20px 0;
+    color: yellow
+}
+
+.student{
+    text-align:left;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+   
+ 
+}
+
+    .noStudent{
+        color:yellow;
+        font-family: Helvetica;
+        font-style: italic;
+        text-align: left;
+      }
+
+      form{
+          text-align: center;
+          margin: 5% auto;
+      }
