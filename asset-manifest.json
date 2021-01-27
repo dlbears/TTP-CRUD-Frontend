@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/TTP-CRUD-Frontend/static/css/main.118b72af.chunk.css",
+    "main.js": "/TTP-CRUD-Frontend/static/js/main.8b700c15.chunk.js",
+    "main.js.map": "/TTP-CRUD-Frontend/static/js/main.8b700c15.chunk.js.map",
+    "runtime-main.js": "/TTP-CRUD-Frontend/static/js/runtime-main.51203f71.js",
+    "runtime-main.js.map": "/TTP-CRUD-Frontend/static/js/runtime-main.51203f71.js.map",
+    "static/js/2.f1fce58c.chunk.js": "/TTP-CRUD-Frontend/static/js/2.f1fce58c.chunk.js",
+    "static/js/2.f1fce58c.chunk.js.map": "/TTP-CRUD-Frontend/static/js/2.f1fce58c.chunk.js.map",
+    "index.html": "/TTP-CRUD-Frontend/index.html",
+    "static/css/main.118b72af.chunk.css.map": "/TTP-CRUD-Frontend/static/css/main.118b72af.chunk.css.map",
+    "static/js/2.f1fce58c.chunk.js.LICENSE.txt": "/TTP-CRUD-Frontend/static/js/2.f1fce58c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.51203f71.js",
+    "static/js/2.f1fce58c.chunk.js",
+    "static/css/main.118b72af.chunk.css",
+    "static/js/main.8b700c15.chunk.js"
+  ]
+}
