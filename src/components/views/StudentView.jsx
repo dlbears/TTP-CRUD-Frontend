@@ -1,47 +1,57 @@
-import React, {Component} from 'react';
-import './styles/AllPlayersView.css';
+import React, {Component, useState} from 'react';
+import './styles/StudentView.css';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom'
 
-const Students= [{id: 1, name: 'Ben Hollen'},{id: 2, name: 'Granny Smith'},{id:3, name: 'Banana Smoothie'},{id:4, name:'Timmy Turner'}]
+const FormView = ({ onSubmit, formRef }) => {
+  const [{ firstname, lastname, email }, setForm] = useState({ firstname: '', lastname: '', email: ''})
+  //console.log(name)
+  return (<form onSubmit={e => {e.preventDefault(); console.log("STUDENT_SUBMIT: ", firstname, lastname, email);  onSubmit(firstname, lastname, email)}} ref={formRef}>
+    <label for='Namef'>First Name:</label>
+    <input type= 'text' id='Namef' name='Namef' value={firstname} onChange={e => setForm({ firstname: e.target.value, lastname, email })} required/><br></br>
+    <label for='Namel'>Last Name:</label>
+    <input type='text' id='Namel' name='Namel' value={lastname} onChange={e => setForm({ firstname, lastname: e.target.value, email })} required/><br></br>
+    <label for='Email'>Email:</label>
+    <input type= 'email' id='Email' name='Email' value={email} onChange={e => setForm({ firstname, lastname, email: e.target.value })} required/><br></br>
+  </form>)
+}
+
+
+//const Students= [{id: 1, name: 'Ben Hollen'},{id: 2, name: 'Granny Smith'},{id:3, name: 'Banana Smoothie'},{id:4, name:'Timmy Turner'}]
 class StudentView extends Component {
     constructor(props){
         super(props)
         this.state={button: true}
     }
 render(){
- console.log(Students)
- console.log(this.state.button)
+ //console.log(Students)
+ //console.log(this.state.button)
   return (
+    <div className="wrapper">
     <div className="student">
-      {Students.map(player => (
-        <div key={player.id} className="Student">
-          <div className='studenttext'><h1>{player.name}</h1></div>
-          <div className='bs4'>
-         <button type='button' class="Button">Delete</button>
-        </div>
+      {this.props.students.map(({ id, firstname, lastname }) => (
+        <div key={id} className="Student">
+          <Link to={`/students/${id}`}>
+            <div className='studenttext'><h1>{`${firstname} ${lastname}`}</h1></div>
+          </Link>
+          <div onClick={() => this.props.onDelete(id)} className='bs4'>
+            <button type='button' class="Button">Delete</button>
+          </div>
         </div>
       ))}
-      <div className='noStudent'>
-          <p>There are no students to view.<br/>
-          Click "Add Student" to add a student</p>
       </div>
-      <div className='bs5'>
-        <div className='bs6' style={{display:(this.state.button ? 'block':'none')}}>
-      <button type='button' class="Button2" onClick={this.handleChange}>Add Student</button>
-      </div>
-      <div style={{display:(this.state.button ? 'none':'block')}}className='StudentForm'>
-       <form>
-         <label for='Namef'>First Name:</label>
-         <input type= 'text' id='Namef' name='Namef' value=''/><br></br>
-         <label for='Namel'>Last Name:</label>
-         <input type='text' id='Namel' name='Namel' value=''/><br></br>
-         <label for='Email'>Email:</label>
-         <input type= 'text' id='Email' name='Email' value=''/><br></br>
-         <input type= 'submit' class="Button" value="Submit" onSubmit={this.handleChange}/>
-       </form>
-      </div>
-      {console.log(this.state.button)}
-      </div>
+      { 
+        this.props.students.length === 0 && (
+          <div className='noStudent'>
+              <p>There are no students to view.<br/>
+              Click "Add" to add a student</p>
+          </div>
+        )
+      }
+      {
+        this.props.isEditing && <FormView onSubmit={this.props.onSubmit} formRef={this.props.formRef} />
+      }
+    
     </div>
   );
 };

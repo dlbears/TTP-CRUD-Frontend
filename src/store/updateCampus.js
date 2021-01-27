@@ -13,13 +13,31 @@ const updateCampus = campusData => {
 }
 
 // THUNK CREATORS;
-export const updateCampusThunk = (id, campusData) => dispatch => {
-  return axios
-    .put(`${URL_ROOT}/routes/campusUpdate/${id}`, { campusData })
+export const updateCampusThunk = (id, studentUpdates, { name, imageUrl, address, description }) => dispatch => {
+    Promise.allSettled([
+        ...studentUpdates.map(([type, student]) => type === "REMOVE" ? ({ ...student, campusId: null }) : ({ ...student, campusId: id }))
+                         .map(({ id: sId, ...body }) => axios.put(`${URL_ROOT}/routes/studentUpdate/${sId}`, body)),
+        axios.put(`${URL_ROOT}/routes/campusUpdate/${id}`, { name, address, description, imageUrl })
+    ]).then(res => {
+        dispatch(updateCampus(res
+            .map(({ value: { data : { message, ...rest }}}) => ({ message, ...rest }))
+            .reduce(({ students, campus }, cur) => {
+                if (cur.message.includes("STUDENT")) {
+                    return { students: [...students, cur.student ], campus }
+                } else if (cur.message.includes("CAMPUS")) {
+                    return { students, campus: cur.campus }
+                }
+               return { students, campus }
+           }, { students: [], campus: {} })))
+    })
+    .catch(err => console.error(err))
+
+  /*return /*axios
+    .put(`${URL_ROOT}/routes/campusUpdate/${id}`, { name, address, description, imageUrl })
     .then(({ status, data }) => ({ status, data }))
     .then(({ status, data: { campus } }) => {
-       if (200 <= status && status < 300) dispatch(updateCampus(campus))
+       if (200 <= status && status < 300) dispatch(updateCampus({ name, imageUrl, address, description, id }))
        else throw new Error("Error updating campus")
     })
-    .catch(err => console.log(err))
+    .catch(err => console.log(err))*/
 }

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { URL_ROOT } from '../constants'
-
+import { errorFetchCampusThunk } from '../reducers/errorCampus'
 // ACTION TYPES;
 export const FETCH_CAMPUS = "FETCH_CAMPUS";
 
@@ -21,5 +21,5 @@ export const fetchCampusThunk = id => dispatch => {
        if (200 <= status && status < 300) dispatch(fetchCampus(campus))
        else throw new Error("Error fetching campus")
     })
-    .catch(err => console.log(err))
+    .catch(err => errorFetchCampusThunk(id)(dispatch))
 }

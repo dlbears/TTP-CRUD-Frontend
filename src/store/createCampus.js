@@ -14,6 +14,7 @@ const createCampus = campus => {
 
 // THUNK CREATORS;
 export const createCampusThunk = campusData => dispatch => {
+    console.log('CAMPUS DATA: ', campusData)
   return axios
     .post(`${URL_ROOT}/routes/campusCreate`, campusData)
     .then(({ status, data }) => ({ status, data })) // Returned data should be an id

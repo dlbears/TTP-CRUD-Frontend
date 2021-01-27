@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { URL_ROOT } from '../../constants'
+import { URL_ROOT } from '../constants'
 
 // ACTION TYPES;
 const ERROR_FETCH_STUDENT = "ERROR_FETCH_STUDENT";
