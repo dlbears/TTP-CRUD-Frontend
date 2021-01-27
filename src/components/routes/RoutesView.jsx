@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import { CampusesContainer, StudentsContainer } from '../containers';
 import { withComboBar } from '../views/Nav'
 
@@ -45,6 +45,7 @@ const Home = () => (<div style={styles}> Welcome to the CRUD app homepage, to mo
 
 const RoutesView = () => {
   return (
+    <BrowserRouter basename="/TTP-CRUD-Frontend">
     <Switch>
       <Route exact path="/" component={withComboBar(Home)} />
       <Route exact path={["/campuses", "/campuses/:id"]} component={withComboBar(CampusesContainer)} />
@@ -52,6 +53,7 @@ const RoutesView = () => {
       <Route exact strict path="/400" component={withComboBar(P400)} />
       <Route path="*" component={withComboBar(P404)} />
     </Switch>
+    </BrowserRouter>
   )
 }
 

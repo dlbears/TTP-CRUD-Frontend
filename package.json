@@ -1,6 +1,7 @@
 {
   "name": "anterior-chain",
   "homepage": "http://dlbears.github.io/TTP-CRUD-Frontend",
+  "start_url": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
